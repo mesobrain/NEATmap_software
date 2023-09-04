@@ -6,7 +6,7 @@
 
 _**NEATmap: a deep learning approach for high-efficiency whole mouse brain neural activity analysis**_
 
-Weijie Zheng*, Huawei Mu*, Zhiyi Chen, Jiajun Liu, Debin Xia, Yuxiao, Cheng, Qi Jing, Jin Tang, Guo-Qiang Bi, Feng Wu and Hao Wang. NEATmap: a deep learning approach for high-efficiency whole mouse brain neuralactivity analysis submitted to *National Science Review*.
+Weijie Zheng*, Huawei Mu*, Zhiyi Chen, Jiajun Liu, Debin Xia, Yuxiao, Cheng, Qi Jing, Jin Tang, Guo-Qiang Bi, Feng Wu and Hao Wang. NEATmap: a high-efficiency deep learning approach for whole mouse brain neuronal activity trace mapping submitted to *National Science Review*.
 
 \* equal contribution
 

@@ -39,6 +39,7 @@ Availability and implementation:
 The source code for all modules of NEATmap is implemented in Python.   
 
 Code source, tutorial, documentation are available at: https://github.com/mesobrain/NEATmap.
+
 Whole-brain is available at: https://zenodo.org/record/8133486.
 <br />
 

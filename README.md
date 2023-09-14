@@ -31,7 +31,7 @@ The explanation is as follows:
 <div style="text-align: justify">
 
 ### 1.	Abstract & Availability<a name="abstract"></a> 
-Quantitative analysis of activated neurons in mice brains by a specific stimulation has long been a primary step to locate the distribution of responsive neurons across the brain. However, it’s challenging to comprehensively and consistently analyze the neuronal activation in whole brains of large cohorts of mice from many Terabytes of volumetric imaging datasets. Here, we introduce **NEATmap**, a deep-learning based high-efficiency, high-precision, and user-friendly software for whole brain **NE**uronal **A**ctivity **T**race **map**ping by automated segmentation and quantitative analysis of immunofluorescence labeled c-Fos+ neurons. We applied NEATmap to study the brain-wide differentiated neuronal activation in response to physical and psychological stressors in cohorts of mice.
+Quantitative analysis of activated neurons in mice brains by a specific stimulation is usually a primary step to locate the responsive neurons throughout the brain. However, it’s challenging to comprehensively and consistently analyze the neuronal activity trace in whole brains of large cohort of mice from many Terabytes of volumetric imaging data. Here, we introduce **NEATmap**, a deep-learning based high-efficiency, high-precision, and user-friendly software for whole brain **NE**uronal **A**ctivity **T**race **map**ping by automated segmentation and quantitative analysis of immunofluorescence labeled c-Fos+ neurons. We applied NEATmap to study the brain-wide differentiated neuronal activation in response to physical and psychological stressors in cohorts of mice.
  <br />
 <br />
 Availability and implementation:

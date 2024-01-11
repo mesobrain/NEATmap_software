@@ -22,10 +22,12 @@ The explanation is as follows:
 * [**1. Abstract & Availability**](#abstract)
 * [**2. Installation & Running**](#installation)
 * [**3. Settings**](#settings)
-* [**4. Data preprocessing**](#data_preprocessing)
-* [**5. Whole brain segmentation**](#whole_brain_segmentation)
-* [**6. Splice & Post processing**](#Splice)
-* [**7. Registration & Analysis**](#registration)
+* [**4. User friendly operation**](#user_friendly)
+* [**5. Transfer learning**](#transfer_learning)
+* [**6. Data preprocessing**](#data_preprocessing)
+* [**7. Whole brain segmentation**](#whole_brain_segmentation)
+* [**8. Splice & Post processing**](#Splice)
+* [**9. Registration & Cell counting**](#registration)
 <br />
 
 <div style="text-align: justify">
@@ -72,7 +74,32 @@ height=300>
 </p>
 <br />
 
-### 4. Data preprocessing <a name="data_preprocessing"></a> 
+### 4. User friendly operation <a name="user_friendly"></a> 
+
+Click the **User friendly** button to effortlessly complete the entire process, from data preprocessing to cell counting.
+
+<p align="center">
+<img src="doc\Html\User_friendly_demo.png"
+height=300>
+<img src="doc\Html\User_friendly.png"
+height=300>
+</p>
+<br />
+
+### 5. Transfer learning <a name="transfer_learning"></a> 
+
+Click the **Transfer learning** button to fine-tune the 3D-HSFormer model. This operation enables the application of NEATmap to whole-brain volumertric datasets of 
+various cell types.
+
+<p align="center">
+<img src="doc\Html\transfer_learning_demo.png"
+height=300>
+<img src="doc\Html\transfer_learning.png"
+height=300>
+</p>
+<br />
+
+### 6. Data preprocessing <a name="data_preprocessing"></a> 
 
 Clicking the **Data preprocessing** button enables the generation of both volumetric images and patch images (sub-volumes).
 
@@ -91,7 +118,7 @@ height=250>
 height=300>
 </p>
 
-### 5. Whole brain segmentation <a name="whole_brain_segmentation"></a> 
+### 7. Whole brain segmentation <a name="whole_brain_segmentation"></a> 
 
 Clicking on **Whole brain segmentation** enables automatic segmentation of immunolabeled signal (c-Fos) across the whole brain.
 
@@ -110,7 +137,7 @@ height=250>
 height=300>
 </p>
 
-### 6. Splice & Post processing <a name="Splice"></a> 
+### 8. Splice & Post processing <a name="Splice"></a> 
 
 Clicking on **Splice** followed by **Post processing** results in the segmented map of immunolabeled signal (c-Fos) across the whole brain.
 
@@ -126,9 +153,9 @@ height=300>
 height=300>
 </p>
 
-### 7. Registration & Analysis <a name="registration"></a> 
+### 9. Registration & Cell counting <a name="registration"></a> 
 
-Clicking on **Registration** followed by **Analysis** enables the registration of the whole brain to the [Allen Common Coordinate Framework atlas](https://atlas.brain-map.org/) and provides information about the spatial coordinates, number, morphology, and other features of cells across the hierarchical regions of the brain.
+Clicking on **Registration** followed by **Cell counting** enables the registration of the whole brain to the [Allen Common Coordinate Framework atlas](https://atlas.brain-map.org/) and provides information about the spatial coordinates, number, morphology, and other features of cells across the hierarchical regions of the brain.
 
 <p align="center">
 <img src="doc\Html\registration&analysis_demo.png"

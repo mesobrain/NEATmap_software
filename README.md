@@ -155,7 +155,7 @@ height=300>
 
 ### 9. Registration & Cell counting <a name="registration"></a> 
 
-Clicking on **Registration** followed by **Cell counting** enables the registration of the whole brain to the [Allen Common Coordinate Framework atlas](https://atlas.brain-map.org/) and provides information about the spatial coordinates, number, morphology, and other features of cells across the hierarchical regions of the brain.
+Clicking on **Registration** followed by **Cell counting** enables the registration of the whole brain to the [Allen Common Coordinate Framework atlas](https://atlas.brain-map.org/) and provides cell counts results at all levels of whole-brain.
 
 <p align="center">
 <img src="doc\Html\registration&analysis_demo.png"

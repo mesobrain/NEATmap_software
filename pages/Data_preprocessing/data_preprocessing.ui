@@ -33,7 +33,7 @@
           <number>1</number>
          </property>
          <property name="text">
-          <string>Data root</string>
+          <string>Data path</string>
          </property>
          <property name="textFormat">
           <enum>Qt::PlainText</enum>
@@ -60,7 +60,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Save root</string>
+          <string>Save path</string>
          </property>
         </widget>
        </item>
@@ -92,14 +92,14 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox561"/>
+        <widget class="QComboBox" name="comboBox405"/>
        </item>
        <item>
         <widget class="QLabel" name="label_5">
@@ -110,6 +110,16 @@
        </item>
        <item>
         <widget class="QComboBox" name="comboBox488"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>561nm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox561"/>
        </item>
        <item>
         <spacer name="horizontalSpacer_2">
@@ -129,9 +139,9 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QRadioButton" name="radioButton561">
+        <widget class="QRadioButton" name="radioButton405">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>
@@ -142,6 +152,16 @@
         <widget class="QRadioButton" name="radioButton488">
          <property name="text">
           <string>488nm</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton561">
+         <property name="text">
+          <string>561nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>
@@ -201,9 +221,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButtonCut561">
+        <widget class="QRadioButton" name="radioButtonCut405">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroupCutting</string>
@@ -214,6 +234,16 @@
         <widget class="QRadioButton" name="radioButtonCut488">
          <property name="text">
           <string>488nm</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroupCutting</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButtonCut561">
+         <property name="text">
+          <string>561nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroupCutting</string>

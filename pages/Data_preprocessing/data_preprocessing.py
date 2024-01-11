@@ -38,6 +38,7 @@ class Datapreprocess(QWidget):
 
         self.data_preprocess.comboBox561.addItems(['C1', 'C2', 'C3', 'C4'])
         self.data_preprocess.comboBox488.addItems(['C1', 'C2', 'C3', 'C4'])
+        self.data_preprocess.comboBox405.addItems(['C1', 'C2', 'C3', 'C4'])
 
         self.data_preprocess.start.clicked.connect(self.run_datapreprocess)
         self.data_preprocess.startCut.clicked.connect(self.Run)
@@ -69,14 +70,14 @@ class Datapreprocess(QWidget):
                 "Error",
                 "Please select data save path."
             )
-        elif self.data_preprocess.radioButton561.isChecked() == False and self.data_preprocess.radioButton488.isChecked() == False:
+        elif self.data_preprocess.radioButton561.isChecked() == False and self.data_preprocess.radioButton488.isChecked() == False and self.data_preprocess.radioButton405.isChecked() == False:
             QMessageBox.critical(
                 self.data_preprocess,
                 "Error",
                 "Please select channel."
             )
 
-        json_path = os.path.join(self.data_preprocess.dataline.text(), '..', 'freesia_4.0_'+ self.data_preprocess.comboBox488.currentText() + '_488nm_10X.json')
+        json_path = os.path.join(self.data_preprocess.dataline.text(), '..', 'freesia_4.0_'+ self.data_preprocess.comboBox405.currentText() + '_405nm_10X.json')
         with open(json_path) as f:
             brain = json.load(f)
             images = brain['images']
@@ -84,8 +85,10 @@ class Datapreprocess(QWidget):
             
         if self.data_preprocess.buttonGroup.checkedButton().text() == '561nm':
             select_channel = self.data_preprocess.comboBox561.currentText()
-        else:
+        elif self.data_preprocess.buttonGroup.checkedButton().text() == '488nm':
             select_channel = self.data_preprocess.comboBox488.currentText()
+        elif self.data_preprocess.buttonGroup.checkedButton().text() == '405nm':
+            select_channel = self.data_preprocess.comboBox405.currentText()
 
         thread = Thread(target=self.brain2dto3d, args=(total_num, select_channel))
         self.data_preprocess.start.setEnabled(False)
@@ -195,7 +198,7 @@ class Datapreprocess(QWidget):
                 "Error",
                 "Please select data save path"
             )
-        elif self.data_preprocess.radioButtonCut561.isChecked() == False and self.data_preprocess.radioButtonCut488.isChecked() == False:
+        elif self.data_preprocess.radioButtonCut561.isChecked() == False and self.data_preprocess.radioButtonCut488.isChecked() == False and self.data_preprocess.radioButtonCut405.isChecked() == False:
             QMessageBox.critical(
                 self.data_preprocess,
                 "Warning",

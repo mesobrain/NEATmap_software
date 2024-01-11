@@ -75,8 +75,8 @@ Network['save_patch_metrics'] = ''
 Network['save_metrics'] = ''
 Network['z_spacing'] = 1
 Infer = {}
-Infer['snapshot_path'] = '/home/weijie/VISoRMap/Network/checkpoint/swin_T_checkpoint_22_01_09'
-Infer['whole_brain_path'] = '/data/weijie/Test_VISoRMap/save'
+Infer['snapshot_path'] = '/home/weijie/NEATmap/Network/checkpoint/swin_T_checkpoint_22_01_09'
+Infer['whole_brain_path'] = '/data/weijie/Test_NEATmap/save'
 Infer['whole_brain_list'] = 'pages/Whole_brain_seg/whole_brain_lists'
 Infer['swin_in_channels'] = 16
 
@@ -99,7 +99,7 @@ Post['point_min_size'] = 1
 Post['big_object_size'] = 3000
 
 Registration = {}
-Registration['parameters_root'] = 'R:/WeijieZheng/VISoRMap_Code/VISoRMap/Registration/parameters'
+Registration['parameters_root'] = 'R:/WeijieZheng/NEATmap_Code/NEATmap/Registration/parameters'
 Registration['Raw_brain_path'] = r'U:\VISoRData\MHW\MHW-SD-B2\MHW-SD-B2-part2\20210830_GLX_MHW_C9_25_1'
 Registration['output_path'] = r'R:\WeijieZheng\Model_GLX_MHW_C9_25_1_seg_pre'
 Registration['output_name'] = 'brain_registration'

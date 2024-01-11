@@ -5,6 +5,8 @@ from PySide2.QtGui import QPixmap, QColor, QFont, QDesktopServices, QIcon
 from PySide2.QtCore import Qt, QElapsedTimer, QUrl
 from pages.Settings.settings import Settings
 from pages.Settings.default_param import default_param
+from pages.User_friendly.neatmap_pipeline import NEATmapPipeline
+from pages.Transfer_learning.transfer_learning import TransferLearning
 from pages.Data_preprocessing.data_preprocessing import Datapreprocess
 from pages.Whole_brain_seg.whole_brain_segmentation import WholeBrainSeg
 from pages.Splice.splice import Splice
@@ -13,7 +15,7 @@ from pages.Registration.registration import BrainRegistration
 from pages.Analysis.analysis import CellCount
 
 ROOT_DIR = os.path.dirname(__file__)
-VERSION = '1.1'
+VERSION = '1.4'
 
 class NEATmap(QMainWindow):
     def __init__(self) -> None:
@@ -21,6 +23,8 @@ class NEATmap(QMainWindow):
         self.neatmap_ui = QUiLoader().load('neatmap.ui')
         self.neatmap_ui.actionHelp.triggered.connect(self.show_user_guide)
         self.neatmap_ui.Settings.clicked.connect(self.Settings)
+        self.neatmap_ui.Userfriendly.clicked.connect(self.UserFriendly)
+        self.neatmap_ui.TransferLearning.clicked.connect(self.TransferLearn)
         self.neatmap_ui.datapro.clicked.connect(self.Datapreprocessing)
         self.neatmap_ui.WholeBrainSeg.clicked.connect(self.WholeBrainSeg)
         self.neatmap_ui.Splice.clicked.connect(self.Splice)
@@ -52,6 +56,26 @@ class NEATmap(QMainWindow):
 
     def SettingsBackHomepage(self):
         self.set.settings.hide()
+        self.neatmap_ui.show()
+
+    def UserFriendly(self):
+        self.pipeline = NEATmapPipeline(params=self.neatmap_params)
+        self.pipeline.neatmap_pipeline.show()
+        self.pipeline.neatmap_pipeline.Back.clicked.connect(self.UserFriendlyBackHome)
+        self.neatmap_ui.hide()
+
+    def UserFriendlyBackHome(self):
+        self.pipeline.neatmap_pipeline.hide()
+        self.neatmap_ui.show()
+
+    def TransferLearn(self):
+        self.transferlearning = TransferLearning(params=self.neatmap_params)
+        self.transferlearning.transfer_learning.show()
+        self.transferlearning.transfer_learning.Back.clicked.connect(self.TransferLearnBackHome)
+        self.neatmap_ui.hide()
+
+    def TransferLearnBackHome(self):
+        self.transferlearning.transfer_learning.hide()
         self.neatmap_ui.show()
 
     def Datapreprocessing(self):

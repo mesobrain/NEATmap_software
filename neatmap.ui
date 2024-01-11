@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1041</width>
-    <height>696</height>
+    <width>1182</width>
+    <height>771</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -35,7 +35,7 @@
 QPushButton:hover { color: red }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_3">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <property name="spacing">
@@ -82,7 +82,7 @@ QPushButton:hover{
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
           <widget class="QFrame" name="frame_2">
            <property name="frameShape">
@@ -138,11 +138,38 @@ QPushButton:hover{
 }</string>
               </property>
               <property name="text">
-               <string>Come complete a mouse whole brain activity atlas. Good luck!</string>
+               <string>Developing an atlas of whole-brain activity in mice. Good luck!</string>
               </property>
              </widget>
             </item>
            </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">*{
+	color: rgb(255, 255, 255)
+}</string>
+           </property>
+           <property name="text">
+            <string>Demo</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="indent">
+            <number>0</number>
+           </property>
           </widget>
          </item>
          <item>
@@ -153,33 +180,6 @@ QPushButton:hover{
            <property name="rightMargin">
             <number>150</number>
            </property>
-           <item>
-            <widget class="QLabel" name="label_4">
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>20</pointsize>
-              </font>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::LeftToRight</enum>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">*{
-	color: rgb(255, 255, 255)
-}</string>
-             </property>
-             <property name="text">
-              <string>Demo</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-             <property name="indent">
-              <number>0</number>
-             </property>
-            </widget>
-           </item>
            <item>
             <widget class="QPushButton" name="Settings">
              <property name="font">
@@ -205,55 +205,7 @@ QPushButton:hover{
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout">
-             <item row="3" column="2">
-              <widget class="QPushButton" name="Analysis">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>18</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">#Analysis{
-	background-color: rgb(0, 0, 0);
-	border:2px solid rgb(255, 255, 255);
-	color : rgb(255, 255, 255)
-}
-
-#Analysis:hover {
-	color: green;
-}</string>
-               </property>
-               <property name="text">
-                <string>Analysis</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0">
-              <widget class="QPushButton" name="Registration">
-               <property name="font">
-                <font>
-                 <family>Arial</family>
-                 <pointsize>18</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">#Registration{
-	background-color: rgb(0, 0, 0);
-	border:2px solid rgb(255, 255, 255);
-	color : rgb(255, 255, 255)
-}
-
-#Registration:hover {
-	color: green;
-}</string>
-               </property>
-               <property name="text">
-                <string>Registration</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="2">
+             <item row="2" column="2">
               <widget class="QPushButton" name="WholeBrainSeg">
                <property name="font">
                 <font>
@@ -277,7 +229,57 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item row="2" column="2">
+             <item row="4" column="0">
+              <widget class="QPushButton" name="Registration">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#Registration{
+	background-color: rgb(0, 0, 0);
+	border:2px solid rgb(255, 255, 255);
+	color : rgb(255, 255, 255)
+}
+
+#Registration:hover {
+	color: green;
+}</string>
+               </property>
+               <property name="text">
+                <string>Registration</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="Userfriendly">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="cursor">
+                <cursorShape>ArrowCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#Userfriendly{
+	background-color: rgb(0, 0, 0);
+	border:2px solid rgb(255, 255, 255);
+	color : rgb(255, 255, 255)
+}
+#Userfriendly:hover{
+	color : green
+}</string>
+               </property>
+               <property name="text">
+                <string>User-friendly</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
               <widget class="QPushButton" name="Post">
                <property name="font">
                 <font>
@@ -301,7 +303,7 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
+             <item row="2" column="0">
               <widget class="QPushButton" name="datapro">
                <property name="font">
                 <font>
@@ -328,7 +330,7 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
+             <item row="3" column="0">
               <widget class="QPushButton" name="Splice">
                <property name="font">
                 <font>
@@ -352,6 +354,53 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
+             <item row="4" column="2">
+              <widget class="QPushButton" name="Analysis">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#Analysis{
+	background-color: rgb(0, 0, 0);
+	border:2px solid rgb(255, 255, 255);
+	color : rgb(255, 255, 255)
+}
+
+#Analysis:hover {
+	color: green;
+}</string>
+               </property>
+               <property name="text">
+                <string>Cell counting</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QPushButton" name="TransferLearning">
+               <property name="font">
+                <font>
+                 <family>Arial</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#TransferLearning{
+	background-color: rgb(0, 0, 0);
+	border:2px solid rgb(255, 255, 255);
+	color : rgb(255, 255, 255)
+}
+#TransferLearning:hover{
+	color : green
+}</string>
+               </property>
+               <property name="text">
+                <string>Transfer learning</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
           </layout>
@@ -368,7 +417,7 @@ QPushButton:hover{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1041</width>
+     <width>1182</width>
      <height>21</height>
     </rect>
    </property>

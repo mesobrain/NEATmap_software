@@ -474,30 +474,6 @@ class BasicLayer_up(nn.Module):
 
         return input 
 
-# class DecodeHead(nn.Module):
-
-#     def __init__(self, input_resolution, dim, dim_scale, norm_layer, num_classes):
-#         super(DecodeHead, self).__init__()
-
-#         self.up3 = PatchExpand(input_resolution, dim, dim_scale, norm_layer)
-#         self.up2 = PatchExpand(input_resolution=(4, 16, 16), dim=192, dim_scale=dim_scale, norm_layer=norm_layer)
-#         self.up1 = PatchExpand(input_resolution=(8, 32, 32), dim=48, dim_scale=dim_scale, norm_layer=norm_layer)
-#         self.up0 = FinalPatchExpand_X4(input_resolution=(16, 64, 64), dim=12, dim_scale=4, norm_layer=norm_layer)
-#         self.prob = nn.Conv3d(in_channels=3, out_channels=num_classes, kernel_size=1, stride=1, padding=0, bias=False)
-            
-#     def forward(self, x):
-#         out3 = self.up3(x[3])
-
-#         out2 = self.up2(out3)
-
-#         out1 = self.up1(out2)
-
-#         out = self.up0(out1)
-#         out = out.view(out.shape[0], out.shape[2], 64, 256, 256)
-#         out = self.prob(out)
-
-#         return out
-
 class Convblock(nn.Module):
     def __init__(self, in_channel, bias=False):
         super(Convblock, self).__init__()

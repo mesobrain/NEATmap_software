@@ -246,12 +246,9 @@ class ConfusionMatrix(object):
     def update(self, a, b):
         n = self.num_classes
         if self.mat is None:
-            # 创建混淆矩阵
             self.mat = torch.zeros((n, n), dtype=torch.int64, device=a.device)
         with torch.no_grad():
-            # 寻找预测为目标的像素索引
             k = (a >= 0) & (a < n)
-            # 统计像素真实类别b[k]被预测成类别a[k]的个数(这里的做法很巧妙)
             inds = n * a[k].to(torch.int64) + b[k]
             self.mat += torch.bincount(inds, minlength=n**2).reshape(n, n)
 
@@ -261,15 +258,12 @@ class ConfusionMatrix(object):
 
     def compute(self):
         h = self.mat.float()
-        # 计算全局预测准确率(混淆矩阵的对角线为预测正确的个数)
         # ans1= torch.diag(h).sum()
         # ans2 = h.sum()
         acc_global = torch.diag(h).sum() / h.sum()
-        # 计算每个类别的准确率
         # ans3 = torch.diag(h)
         # ans4 = h.sum(1)
         acc = torch.diag(h) / h.sum(1)
-        # 计算每个类别预测与真实目标的iou
         # ans5 = h.sum(0)
         iu = torch.diag(h) / (h.sum(1) + h.sum(0) - torch.diag(h))
         return acc_global, acc, iu
@@ -303,17 +297,13 @@ def create_lr_scheduler(optimizer,
     assert num_step > 0 and epochs > 0
 
     def f(x):
-        """
-        根据step数返回一个学习率倍率因子，
-        注意在训练开始之前，pytorch会提前调用一次lr_scheduler.step()方法
-        """
+
         if warmup is True and x <= (warmup_epochs * num_step):
             alpha = float(x) / (warmup_epochs * num_step)
-            # warmup过程中lr倍率因子从warmup_factor -> 1
+
             return warmup_factor * (1 - alpha) + alpha
         else:
-            # warmup后lr倍率因子从1 -> 0
-            # 参考deeplab_v2: Learning rate policy
+
             return (1 - (x - warmup_epochs * num_step) / ((epochs - warmup_epochs) * num_step)) ** 0.9
 
     return torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=f)

@@ -163,9 +163,9 @@
         </spacer>
        </item>
        <item>
-        <widget class="QRadioButton" name="Channel561">
+        <widget class="QRadioButton" name="Channel405">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">ChannelGroup</string>
@@ -176,6 +176,16 @@
         <widget class="QRadioButton" name="Channel488">
          <property name="text">
           <string>488nm</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">ChannelGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="Channel561">
+         <property name="text">
+          <string>561nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">ChannelGroup</string>

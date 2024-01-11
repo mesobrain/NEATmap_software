@@ -144,7 +144,7 @@ class WholeBrainSeg(QWidget):
                 "Error",
                 "Please select data save path."
             )
-        elif self.whole_brain_seg.Channel561.isChecked() == False and self.whole_brain_seg.Channel488.isChecked() == False:
+        elif self.whole_brain_seg.Channel561.isChecked() == False and self.whole_brain_seg.Channel488.isChecked() == False and self.whole_brain_seg.Channel405.isChecked() == False:
             QMessageBox.critical(
                 self.whole_brain_seg,
                 "Error",

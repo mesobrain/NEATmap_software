@@ -41,7 +41,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Brain root</string>
+          <string>Brain path</string>
          </property>
         </widget>
        </item>
@@ -89,7 +89,7 @@
        <item>
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Save root</string>
+          <string>Save path</string>
          </property>
         </widget>
        </item>

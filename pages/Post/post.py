@@ -79,7 +79,10 @@ class PostProcess(QWidget):
         image_path = self.post_process.BrainRootLine.text()
         spliced_path = self.post_process.SplicePathLine.text()
         pred_path = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Staining channel'])
-        path_488nm = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Autofluo channel'])
+        if os.path.exists(os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Autofluo channel'])):
+            path_488nm = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Autofluo channel'])
+        else:
+            path_488nm = None
         save_path = os.path.join(self.post_process.SaveRootLine.text(), 'whole_brain_pred_post_filter')
         min_size = int(self.params['point_min_size']) 
         max_intensity = int(self.params['big_object_size'])
@@ -95,9 +98,13 @@ class PostProcess(QWidget):
         if index < len(os.listdir(pred_path)):
             img = tifffile.imread(os.path.join(image_path, 'Z{:05d}.tif'.format(index)))
             seg = tifffile.imread(os.path.join(pred_path, 'Z{:05d}_seg.tif'.format(index)))
-            seg_488nm = tifffile.imread(os.path.join(path_488nm, 'Z{:05d}_seg.tif'.format(index)))
-            seg, seg_488nm = segmentation_quick_view(seg), segmentation_quick_view(seg_488nm)
-            post_seg = post_488nm(seg, seg_488nm)
+            if path_488nm is not None:
+                seg_488nm = tifffile.imread(os.path.join(path_488nm, 'Z{:05d}_seg.tif'.format(index)))
+                seg = segmentation_quick_view(seg)
+                seg_488nm = segmentation_quick_view(seg_488nm)
+                post_seg = post_488nm(seg, seg_488nm)
+            else:
+                post_seg = segmentation_quick_view(seg)
             resMatrix = remove_piont(post_seg>0, min_size)
             resMatrix = segmentation_quick_view(resMatrix)
             filter_matrix = img.astype(np.float32) - resMatrix.astype(np.float32)

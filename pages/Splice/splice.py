@@ -35,6 +35,7 @@ class Splice(QWidget):
         self.splice.Start.clicked.connect(self.run_splice)
         self.splice.Stop.clicked.connect(self.StopSeg)
 
+        self.splice.comboBox405.addItems(['C1', 'C2', 'C3', 'C4'])
         self.splice.comboBox561.addItems(['C1', 'C2', 'C3', 'C4'])
         self.splice.comboBox488.addItems(['C1', 'C2', 'C3', 'C4'])
 
@@ -95,14 +96,14 @@ class Splice(QWidget):
                 "Error",
                 "Please select save path."
             )
-        elif self.splice.radioButton561.isChecked() == False and self.splice.radioButton488.isChecked() == False:
+        elif self.splice.radioButton561.isChecked() == False and self.splice.radioButton488.isChecked() == False and self.splice.radioButton405.isChecked() == False:
             QMessageBox.critical(
                 self.splice,
                 "Error",
                 "Please select channel."
             )
 
-        json_path = os.path.join(self.splice.DataRootLine.text(), '..', 'freesia_4.0_'+ self.splice.comboBox488.currentText() + '_488nm_10X.json')
+        json_path = os.path.join(self.splice.DataRootLine.text(), '..', 'freesia_4.0_'+ self.splice.comboBox405.currentText() + '_405nm_10X.json')
         with open(json_path) as f:
             brain = json.load(f)
             images = brain['images']

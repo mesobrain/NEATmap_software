@@ -26,7 +26,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Data root</string>
+          <string>Data path</string>
          </property>
         </widget>
        </item>
@@ -59,7 +59,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Infer root</string>
+          <string>Infer path</string>
          </property>
         </widget>
        </item>
@@ -80,7 +80,7 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Brain root</string>
+          <string>Brain path</string>
          </property>
         </widget>
        </item>
@@ -101,7 +101,7 @@
        <item>
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>Save root</string>
+          <string>Save path</string>
          </property>
         </widget>
        </item>
@@ -142,14 +142,14 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox561"/>
+        <widget class="QComboBox" name="comboBox405"/>
        </item>
        <item>
         <widget class="QLabel" name="label_4">
@@ -160,6 +160,16 @@
        </item>
        <item>
         <widget class="QComboBox" name="comboBox488"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>561nm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox561"/>
        </item>
        <item>
         <spacer name="horizontalSpacer_2">
@@ -186,9 +196,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton561">
+        <widget class="QRadioButton" name="radioButton405">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>
@@ -199,6 +209,16 @@
         <widget class="QRadioButton" name="radioButton488">
          <property name="text">
           <string>488nm</string>
+         </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup</string>
+         </attribute>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton561">
+         <property name="text">
+          <string>561nm</string>
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup</string>

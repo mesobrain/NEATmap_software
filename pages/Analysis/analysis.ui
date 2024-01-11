@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1104</width>
-    <height>858</height>
+    <width>928</width>
+    <height>762</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Analysis</string>
+   <string>Cell counting</string>
   </property>
   <property name="styleSheet">
    <string notr="true">*{
@@ -87,14 +87,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>561nm</string>
+          <string>405nm</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBox561"/>
+        <widget class="QComboBox" name="comboBox405"/>
        </item>
        <item>
         <widget class="QLabel" name="label_5">
@@ -105,6 +105,16 @@
        </item>
        <item>
         <widget class="QComboBox" name="comboBox488"/>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>561nm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox561"/>
        </item>
        <item>
         <spacer name="horizontalSpacer">

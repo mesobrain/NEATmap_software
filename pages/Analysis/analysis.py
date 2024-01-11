@@ -42,6 +42,7 @@ class CellCount(QWidget):
 
         self.cellcount.comboBox561.addItems(['C1', 'C2', 'C3', 'C4'])
         self.cellcount.comboBox488.addItems(['C1', 'C2', 'C3', 'C4'])
+        self.cellcount.comboBox405.addItems(['C1', 'C2', 'C3', 'C4'])
 
         self.params = params
 
@@ -225,7 +226,7 @@ class CellCount(QWidget):
         csv_root = os.path.join(self.cellcount.SaveRootLine.text(), 'whole_brain_cell_counts')
         save_csv_root = os.path.join(csv_root, 'Thumbnail_CSV')
         total_path = os.path.join(csv_root, 'total.txt')
-        json_path = os.path.join(self.cellcount.DataRootLine.text(), '..', 'freesia_4.0_'+ self.cellcount.comboBox488.currentText() + '_488nm_10X.json')
+        json_path = os.path.join(self.cellcount.DataRootLine.text(), '..', 'freesia_4.0_'+ self.cellcount.comboBox405.currentText() + '_405nm_10X.json')
         with open(json_path) as f:
             brain = json.load(f)
             images = brain['images']

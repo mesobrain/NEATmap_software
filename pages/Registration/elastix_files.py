@@ -132,7 +132,7 @@ def get_align_transform(fixed, moving, parameter_files, visormap_param, fixed_ma
                 #p['Size'] = [str(k) for k in moving.GetSize()]
                 elastix.WriteParameterFile(p, file)
                 ct += 1
-            out, inv = get_align_transform(moving, fixed, [os.path.join(PARAMETER_DIR, visormap_param['inverse_param'])],
-                                           initial_transform=file)
+            out, inv = get_align_transform(moving, fixed, [os.path.join(PARAMETER_DIR, visormap_param['inverse_param'])], 
+                                            visormap_param, initial_transform=file)
             return s, transform, inv
     return s, transform

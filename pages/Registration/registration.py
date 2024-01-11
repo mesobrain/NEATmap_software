@@ -76,6 +76,8 @@ class BrainRegistration(QWidget):
         thread.start()
 
     def register_brain(self, image_list_file:str, output_path: str, template_file: str, output_name:str=''):
+        self.registration.Start.setEnabled(False)
+        self.registration.Stop.setEnabled(True)
         self.signal.stop_registration.emit(self.registration.Stop)
         with open(template_file) as f:
             doc = json.load(f)
@@ -94,8 +96,6 @@ class BrainRegistration(QWidget):
         else:
             brain_image_files = []
             with open(image_list_file) as f:
-                self.registration.Start.setEnabled(False)
-                self.registration.Stop.setEnabled(True)
                 doc_ = json.load(f)
                 for i in doc_['images']:
                     brain_image_files.append(os.path.join(os.path.dirname(image_list_file), doc_['image_path'], i['file_name']))
@@ -150,4 +150,5 @@ class BrainRegistration(QWidget):
                 #with open(os.path.join(atlas_path, 'freesia-atlas.json'), 'w') as f_:
                 #    json.dump(atlas_info, f_, indent=4)
         self.registration.Stop.setText('Finished')
+        self.registration.Stop.setEnabled(True)
         self.registration.Start.setEnabled(True)

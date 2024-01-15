@@ -515,14 +515,13 @@ class NEATmapPipeline(QWidget):
         pred_root = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'whole_predications_' + channel)
 
         ## Run registration
-        reconstruction_root = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', '..', '..', 'Reconstruction')
         channel405 = self.neatmap_pipeline.comboBox405.currentText()
         channel488 = self.neatmap_pipeline.comboBox488.currentText()
-        image_list_json = os.path.join(reconstruction_root, 'BrainImage', 'freesia_4.0_'+ channel488 +'_488nm_10X.json')
+        image_list_json = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel488 +'_488nm_10X.json')
         if os.path.exists(image_list_json):
             image_list_file = image_list_json
         else:
-            image_list_file = os.path.join(reconstruction_root, 'BrainImage', 'freesia_4.0_'+ channel405 +'_405nm_10X.json')
+            image_list_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel405 +'_405nm_10X.json')
         output_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'BrainRegistration')
         os.makedirs(output_path, exist_ok=True)
         template_file = 'pages/Registration/data/ccf_v3_template.json'

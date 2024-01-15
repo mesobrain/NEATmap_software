@@ -175,3 +175,7 @@ height=250>
 ## Supplementary instruction
 
 Detailed instructions for specific operations can be found in the **User_guide.pdf** file located in the **doc** directory. The usage tutorial for the NEATmap software can be found in the **Tutorial_video** folder under the file name **neatmap_tutorial.mp4**. Additionally, the **seg-display.mp4** file demonstrates the segmentation and cell counting results of NEATmap.
+
+### Update
+
+The video titled **User_friendly_tutorial** in the **Tutorial_video** folder demonstrates user-friendly operations. The **transfer_learning_tutorial** video demonstrates how to fine-tune a deep learning model. This operation can also be applied to whole-brain datasets of other cell types using NEATmap.

@@ -262,7 +262,7 @@ class PostProcess(QWidget):
                                         range=intensity_range,
                                         density=False)
         bins = ( bin_edges[:-1] + bin_edges[1:] ) / 2
-        savename = os.path.join(save_path, 'whole_brain_detected_c-Fos_signal_intensity.csv')
+        savename = os.path.join(save_path, 'c-Fos_signal_intensity.csv')
         values = pd.DataFrame(columns=['intensity', 'normalized_count'])
         values['intensity'] = bins
         values['normalized_count'] = hist
@@ -273,7 +273,7 @@ class PostProcess(QWidget):
         self.ax.bar(bins, hist, width=10, align='center', alpha=0.7, color='b')
         self.ax.set_xlabel('Intensity')
         self.ax.set_ylabel('Counts')
-        self.ax.set_title('Whole brain detected c-Fos positive signal intensity')
+        self.ax.set_title('The detected signal intensity of neurons in the whole brain')
         self.figure.savefig(os.path.join(save_path, 'Intensity.png'))
         self.canvas.draw()
         self.plot.show()

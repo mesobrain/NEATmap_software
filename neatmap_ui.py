@@ -15,7 +15,7 @@ from pages.Registration.registration import BrainRegistration
 from pages.Analysis.analysis import CellCount
 
 ROOT_DIR = os.path.dirname(__file__)
-VERSION = '1.4'
+VERSION = '1.5'
 
 class NEATmap(QMainWindow):
     def __init__(self) -> None:

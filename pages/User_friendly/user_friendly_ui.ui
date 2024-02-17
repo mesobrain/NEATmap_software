@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>856</height>
+    <width>1103</width>
+    <height>849</height>
    </rect>
   </property>
   <property name="font">
@@ -26,7 +26,7 @@
       <string notr="true">font: 24pt &quot;Arial&quot;;</string>
      </property>
      <property name="text">
-      <string>User-friendly NEATmap pipeline</string>
+      <string>All-in-one NEATmap pipeline</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -44,6 +44,22 @@
         <string>Data path</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_9">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>47</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QLineEdit" name="DataRoot_lineEdit">
@@ -83,7 +99,32 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>43</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLineEdit" name="SaveRoot_lineEdit">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="font">
         <font>
          <family>Arial</family>
@@ -174,35 +215,12 @@
       </spacer>
      </item>
      <item>
-      <widget class="QRadioButton" name="channel405">
-       <property name="styleSheet">
-        <string notr="true">font: 14pt &quot;Arial&quot;;</string>
-       </property>
-       <property name="text">
-        <string>405nm</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox405">
-       <property name="font">
-        <font>
-         <family>Arial</family>
-         <pointsize>14</pointsize>
-        </font>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QRadioButton" name="channel488">
        <property name="styleSheet">
         <string notr="true">font: 14pt &quot;Arial&quot;;</string>
        </property>
        <property name="text">
-        <string>488nm</string>
+        <string>Autofluo channel</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -225,7 +243,7 @@
         <string notr="true">font: 14pt &quot;Arial&quot;;</string>
        </property>
        <property name="text">
-        <string>561nm</string>
+        <string>Staining channel</string>
        </property>
        <attribute name="buttonGroup">
         <string notr="true">buttonGroup</string>
@@ -326,6 +344,22 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_12">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>37</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QProgressBar" name="Data_progressBar">
        <property name="font">
         <font>
@@ -364,6 +398,22 @@
         <string>Cutting</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_13">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>86</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QProgressBar" name="Cut_progressBar">
@@ -452,6 +502,22 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_14">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>66</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QProgressBar" name="Segmenter_progressBar">
        <property name="font">
         <font>
@@ -481,7 +547,7 @@
         <string notr="true">font: 20pt &quot;Arial&quot;;</string>
        </property>
        <property name="text">
-        <string>3. Splicing</string>
+        <string>3. Whole brian reassemble</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -527,9 +593,25 @@
         <string notr="true">font: 14pt &quot;Arial&quot;;</string>
        </property>
        <property name="text">
-        <string>Splice brain image</string>
+        <string>Reassembling</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_11">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>12</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QProgressBar" name="Splice_progressBar">
@@ -754,6 +836,22 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacer_15">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>48</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QProgressBar" name="BrainSlice_progressBar">
        <property name="font">
         <font>
@@ -783,9 +881,25 @@
         <string notr="true">font: 14pt &quot;Arial&quot;;</string>
        </property>
        <property name="text">
-        <string>Cell counts</string>
+        <string>Cell counting</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_16">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>25</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QProgressBar" name="CellCounts_progressBar">
@@ -820,6 +934,22 @@
         <string>Export table</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_17">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>33</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QProgressBar" name="ExportTable_progressBar">

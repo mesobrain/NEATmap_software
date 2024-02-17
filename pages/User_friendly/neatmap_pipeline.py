@@ -58,7 +58,6 @@ class NEATmapPipeline(QWidget):
 
         self.neatmap_pipeline.comboBox561.addItems(['C1', 'C2', 'C3', 'C4'])
         self.neatmap_pipeline.comboBox488.addItems(['C1', 'C2', 'C3', 'C4'])
-        self.neatmap_pipeline.comboBox405.addItems(['C1', 'C2', 'C3', 'C4'])   
 
         self.neatmap_pipeline.Data_progressBar.setMaximum(100)    
         self.neatmap_pipeline.Cut_progressBar.setMaximum(100)
@@ -257,12 +256,12 @@ class NEATmapPipeline(QWidget):
         self.signal.state.emit(self.neatmap_pipeline.splice_state)
 
     def run_post(self, index):
-        image_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'brain_image_64_561nm')
+        image_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'brain_image_64_Staining channel')
         # autofluo_image_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'brain_image_64_488nm')
         spliced_path = self.neatmap_pipeline.SaveRoot_lineEdit.text()
-        pred_path = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Staining channel'])
-        if os.path.exists(os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Autofluo channel'])):
-            path_488nm = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Autofluo channel'])
+        pred_path = os.path.join(spliced_path, 'whole_brain_pred_Staining channel')
+        if os.path.exists(os.path.join(spliced_path, 'whole_brain_pred_Autofluo channel')):
+            path_488nm = os.path.join(spliced_path, 'whole_brain_pred_Autofluo channel')
         else:
             path_488nm = None
         save_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'whole_brain_pred_post_filter')
@@ -304,7 +303,7 @@ class NEATmapPipeline(QWidget):
 
     def post_workthread(self):
         spliced_path = self.neatmap_pipeline.SaveRoot_lineEdit.text()
-        pred_path = os.path.join(spliced_path, 'whole_brain_pred_' + self.params['Staining channel'])
+        pred_path = os.path.join(spliced_path, 'whole_brain_pred_Staining channel')
         index = [k for k in range(1, len(os.listdir(pred_path)) + 1)]
         with ThreadPoolExecutor(max_workers=10) as pool:
             pool.map(self.run_post, index)
@@ -487,23 +486,21 @@ class NEATmapPipeline(QWidget):
         self.work_function_queue = queue.Queue()
 
         ## Run Brain image
-        json_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ self.neatmap_pipeline.comboBox405.currentText() + '_405nm_10X.json')
-        if os.path.exists(json_file):
-            json_path = json_file
-        else:
-            json_path = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ self.neatmap_pipeline.comboBox488.currentText() + '_488nm_10X.json')
+        # json_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ self.neatmap_pipeline.comboBox405.currentText() + '_405nm_10X.json')
+        # if os.path.exists(json_file):
+        #     json_path = json_file
+        # else:
+        json_path = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ self.neatmap_pipeline.comboBox488.currentText() + '_488nm_10X.json')
 
         with open(json_path) as f:
             brain = json.load(f)
             images = brain['images']
             total_num = len(images)
             
-        if self.neatmap_pipeline.buttonGroup.checkedButton().text() == '561nm':
+        if self.neatmap_pipeline.buttonGroup.checkedButton().text() == 'Staining channel':
             select_channel = self.neatmap_pipeline.comboBox561.currentText()
-        elif self.neatmap_pipeline.buttonGroup.checkedButton().text() == '488nm':
+        elif self.neatmap_pipeline.buttonGroup.checkedButton().text() == 'Autofluo channel':
             select_channel = self.neatmap_pipeline.comboBox488.currentText()
-        elif self.neatmap_pipeline.buttonGroup.checkedButton().text() == '405nm':
-            select_channel = self.neatmap_pipeline.comboBox405.currentText()
 
         self.neatmap_pipeline.start.setEnabled(False)
         self.neatmap_pipeline.stop.setEnabled(True)
@@ -515,13 +512,13 @@ class NEATmapPipeline(QWidget):
         pred_root = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'whole_predications_' + channel)
 
         ## Run registration
-        channel405 = self.neatmap_pipeline.comboBox405.currentText()
+        # channel405 = self.neatmap_pipeline.comboBox405.currentText()
         channel488 = self.neatmap_pipeline.comboBox488.currentText()
-        image_list_json = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel488 +'_488nm_10X.json')
-        if os.path.exists(image_list_json):
-            image_list_file = image_list_json
-        else:
-            image_list_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel405 +'_405nm_10X.json')
+        image_list_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel488 +'_488nm_10X.json')
+        # if os.path.exists(image_list_json):
+        #     image_list_file = image_list_json
+        # else:
+            # image_list_file = os.path.join(self.neatmap_pipeline.DataRoot_lineEdit.text(), '..', 'freesia_4.0_'+ channel405 +'_405nm_10X.json')
         output_path = os.path.join(self.neatmap_pipeline.SaveRoot_lineEdit.text(), 'BrainRegistration')
         os.makedirs(output_path, exist_ok=True)
         template_file = 'pages/Registration/data/ccf_v3_template.json'
@@ -540,12 +537,12 @@ class NEATmapPipeline(QWidget):
         save_csv_root = os.path.join(csv_root, 'Thumbnail_CSV')
         total_path = os.path.join(csv_root, 'total.txt')
 
-        if self.neatmap_pipeline.buttonGroup.checkedButton().text() == '561nm':
+        if self.neatmap_pipeline.buttonGroup.checkedButton().text() == 'Staining channel':
             function_list = [self.brain2dto3d, self.cut_workthread, self.inference_whole_brain_seg, self.SpliceSegPatch,
                             self.post_workthread,  self.register_brain, self.segmentation_slice, self.BrainImage2Spot, self.Spot_csv]
             args_list = [(total_num, select_channel), (), (channel, patch_path, snapshot), (total_num, pred_root, channel), (), (image_list_file, output_path, template_file, output_name),
                         (data_path, post_path, int(self.params['Thickness'])), (BrainImage_root, csv_root), (total_path, save_csv_root, total_num, float(self.params['group_num']))]
-        elif self.neatmap_pipeline.buttonGroup.checkedButton().text() == '488nm':
+        elif self.neatmap_pipeline.buttonGroup.checkedButton().text() == 'Autofluo channel':
             function_list = [self.brain2dto3d, self.cut_workthread, self.inference_whole_brain_seg, self.SpliceSegPatch]
             args_list = [(total_num, select_channel), (), (channel, patch_path, snapshot), (total_num, pred_root, channel), ()]    
         

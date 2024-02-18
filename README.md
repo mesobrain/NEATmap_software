@@ -22,11 +22,11 @@ The explanation is as follows:
 * [**1. Abstract & Availability**](#abstract)
 * [**2. Installation & Running**](#installation)
 * [**3. Settings**](#settings)
-* [**4. User friendly operation**](#user_friendly)
+* [**4. All-in-one NEATmap pipeline**](#All-in-one_NEATmap_pipeline)
 * [**5. Transfer learning**](#transfer_learning)
 * [**6. Data preprocessing**](#data_preprocessing)
 * [**7. Whole brain segmentation**](#whole_brain_segmentation)
-* [**8. Splice & Post processing**](#Splice)
+* [**8. Whole brain reassemble & Post processing**](#Splice)
 * [**9. Registration & Cell counting**](#registration)
 <br />
 
@@ -74,9 +74,9 @@ height=300>
 </p>
 <br />
 
-### 4. User friendly operation <a name="user_friendly"></a> 
+### 4. All-in-one NEATmap pipeline <a name="All-in-one_NEATmap_pipeline"></a> 
 
-Click the **User friendly** button to effortlessly complete the entire process, from data preprocessing to cell counting.
+Click the **All-in-one NEATmap pipeline** button to effortlessly complete the entire process, from data preprocessing to cell counting.
 
 <p align="center">
 <img src="doc\Html\User_friendly_demo.png"
@@ -137,9 +137,9 @@ height=250>
 height=300>
 </p>
 
-### 8. Splice & Post processing <a name="Splice"></a> 
+### 8. Whole brain reassemble & Post processing <a name="Splice"></a> 
 
-Clicking on **Splice** followed by **Post processing** results in the segmented map of immunolabeled signal (c-Fos) across the whole brain.
+Clicking on **Whole brain reassemble** followed by **Post processing** results in the segmented map of immunolabeled signal (c-Fos) across the whole brain.
 
 <p align="center">
 <img src="doc\Html\Splice&post_demo.png"

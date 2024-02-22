@@ -178,4 +178,4 @@ Detailed instructions for specific operations can be found in the **User_guide.p
 
 ### Update
 
-The video titled **User_friendly_tutorial** in the **Tutorial_video** folder demonstrates user-friendly operations. The **transfer_learning_tutorial** video demonstrates how to fine-tune a deep learning model. This operation can also be applied to whole-brain datasets of other cell types using NEATmap.
+The video titled **User_friendly_tutorial** in the **Tutorial_video** folder demonstrates All-in-one NEATmap pipeline. The **transfer_learning_tutorial** video demonstrates how to fine-tune a deep learning model. This operation can also be applied to whole-brain datasets of other cell types using NEATmap.

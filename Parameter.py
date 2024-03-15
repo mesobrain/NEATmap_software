@@ -93,8 +93,8 @@ Splicing['save_root'] = Save_root
 Splicing['save_splicing_path'] = Save_root
 
 Post = {}
-Post['intensity_lower_differ'] = -95
-Post['intensity_upper_differ'] = -47
+Post['intensity_lower_differ'] = 0
+Post['intensity_upper_differ'] = 1000
 Post['point_min_size'] = 1
 Post['big_object_size'] = 3000
 

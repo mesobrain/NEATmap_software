@@ -6,9 +6,7 @@
 
 _**NEATmap: a high-efficiency deep learning approach for whole mouse brain neuronal activity trace mapping**_
 
-Weijie Zheng*, Huawei Mu*, Zhiyi Chen, Jiajun Liu, Debin Xia, Yuxiao Cheng, Qi Jing, Pak-Ming Lau, Jin Tang, Guo-Qiang Bi, Feng Wu and Hao Wang. NEATmap: a high-efficiency deep learning approach for whole mouse brain neuronal activity trace mapping submitted to *National Science Review*.
-
-\* equal contribution
+Weijie Zheng, Huawei Mu, Zhiyi Chen, Jiajun Liu, Debin Xia, Yuxiao Cheng, Qi Jing, Pak-Ming Lau, Jin Tang, Guo-Qiang Bi, Feng Wu and Hao Wang. 
 
 <p align="center">
 <img src="doc\Html\NEATmap_demo.PNG"
@@ -179,3 +177,16 @@ Detailed instructions for specific operations can be found in the **User_guide.p
 ### Update
 
 The video titled **User_friendly_tutorial** in the **Tutorial_video** folder demonstrates All-in-one NEATmap pipeline. The **transfer_learning_tutorial** video demonstrates how to fine-tune a deep learning model. This operation can also be applied to whole-brain datasets of other cell types using NEATmap.
+
+## Reference
+
+Cite us if you use the software in any form:
+
+    @article{zheng2024neatmap,
+      title={NEATmap: a high-efficiency deep learning approach for whole mouse brain neuronal activity trace mapping},
+      author={Zheng, Weijie and Mu, Huawei and Chen, Zhiyi and Liu, Jiajun and Xia, Debin and Cheng, Yuxiao and Jing, Qi and Lau, Pak-Ming and Tang, Jin and Bi, Guo-Qiang and Wu, Feng and Wang, Hao},
+      journal={National Science Review},
+      pages={nwae109},
+      year={2024},
+      publisher={Oxford University Press}
+}

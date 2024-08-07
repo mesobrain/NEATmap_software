@@ -39,6 +39,9 @@ The source code for all modules of NEATmap is implemented in Python.
 Code source, tutorial, documentation are available at: https://github.com/mesobrain/NEATmap_code.
 
 Whole-brain test dataset is available at: https://zenodo.org/record/8133486.
+
+The trained neural network parameters can be downloaded from this [link](https://drive.google.com/drive/u/0/folders/1lPJaprmVCawnKinYXb5Wa_orkfEniNY4).
+
 <br />
 
 ### 2. Installation $ Running <a name="installation"></a> 
